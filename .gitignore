@@ -1,0 +1,4 @@
+# General ignores
+/.idea/
+.DS_Store
+.vscode
