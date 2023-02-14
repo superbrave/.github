@@ -3,7 +3,7 @@
 - [ ] Nieuwe feature (niet brekende wijziging die functionaliteit toevoegt)
 - [ ] Brekende wijziging (fix of feature waardoor bestaande functionaliteit niet meer werkt zoals verwacht)
 - [ ] Wijziging waarbij een verandering aan documentatie benodigd is
-- [ ] Overige (Voor optimalisaties, refactoring, etc)
+- [ ] Overige (voor optimalisaties, refactoring, etc.)
 
 ### Wijzigingen
 _Omschrijving van welke componenten er zijn gewijzigd en waarom._
