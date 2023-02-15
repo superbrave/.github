@@ -11,7 +11,7 @@ _Omschrijving van welke componenten er zijn gewijzigd en waarom._
 _Omschrijving van de benodigde (technische) stappen om een testbare situatie te creëren en de verwachte uitkomst._
 
 ### Checklist
-- [ ] API wijzigingen zijn volgens OpenAPI specificatie geimplementeerd
+- [ ] API wijzigingen zijn volgens OpenAPI specificatie geïmplementeerd
 - [ ] Testplan veld bijgewerkt bij de story
 - [ ] Acceptatie criteria van de story gecheckt
 - [ ] README bijgewerkt (indien van toepassing)
