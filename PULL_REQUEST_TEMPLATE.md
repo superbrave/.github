@@ -1,3 +1,6 @@
+### Estimated Review Time (ERT)
+Tijdsduur: _hoeveel tijd kost het ongeveer om dit PR te reviewen?_
+
 ### Type wijziging
 - [ ] Bug fix (niet brekende wijziging die een probleem verhelpt)
 - [ ] Nieuwe feature (niet brekende wijziging die functionaliteit toevoegt)
