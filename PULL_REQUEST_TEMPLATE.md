@@ -20,3 +20,4 @@ _Omschrijving van de benodigde (technische) stappen om een testbare situatie te 
 - [ ] Acceptatie criteria van de story gecheckt
 - [ ] README bijgewerkt (indien van toepassing)
 - [ ] Confluence bijgewerkt (indien van toepassing)
+- [ ] Doctrine migraties zijn lokaal getest op de accept db indien er indexes of relaties veranderen
