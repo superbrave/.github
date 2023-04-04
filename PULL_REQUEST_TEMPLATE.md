@@ -1,23 +1,17 @@
-### Estimated Review Time (ERT)
-Tijdsduur: _hoeveel tijd kost het ongeveer om dit PR te reviewen?_
+| Q                     | A
+| --------------------- | ---
+| ⏱ Review tijd        | <!-- 5 min -->
+| ⌨️ Type wijziging      | <!-- 🛠 Bug fix / ➕ Nieuwe feature / 🗒 Docs / 🤷🏻‍♂️ Overige -->
 
-### Type wijziging
-- [ ] Bug fix (niet brekende wijziging die een probleem verhelpt)
-- [ ] Nieuwe feature (niet brekende wijziging die functionaliteit toevoegt)
-- [ ] Brekende wijziging (fix of feature waardoor bestaande functionaliteit niet meer werkt zoals verwacht)
-- [ ] Wijziging waarbij een verandering aan documentatie benodigd is
-- [ ] Overige (voor optimalisaties, refactoring, etc.)
+### ✍️ Wijzigingen
+<!-- Omschrijving van welke componenten er zijn gewijzigd en waarom. -->
 
-### Wijzigingen
-_Omschrijving van welke componenten er zijn gewijzigd en waarom._
+### 🪜 Stappen om te testen
+<!-- Omschrijving van de benodigde (technische) stappen om een testbare situatie te creëren en de verwachte uitkomst. -->
 
-### Stappen om te testen
-_Omschrijving van de benodigde (technische) stappen om een testbare situatie te creëren en de verwachte uitkomst._
-
-### Checklist
+### ✅ Checklist
+- [ ] Acceptatie criteria story gecheckt
+- [ ] Testplan bijgewerkt story
+- [ ] Doctrine migraties slagen op test omgevingen
 - [ ] API wijzigingen zijn volgens OpenAPI specificatie geïmplementeerd
-- [ ] Testplan veld bijgewerkt bij de story
-- [ ] Acceptatie criteria van de story gecheckt
-- [ ] README bijgewerkt (indien van toepassing)
-- [ ] Confluence bijgewerkt (indien van toepassing)
-- [ ] Doctrine migraties zijn lokaal getest op de accept db indien er indexes of relaties veranderen
+- [ ] Docs bijgewerkt
