@@ -1,7 +1,7 @@
-| Q                     | A
-| --------------------- | ---
-| ⏱ Review tijd        | <!-- 5 min -->
-| ⌨️ Type wijziging      | <!-- 🛠 Bug fix / ➕ Nieuwe feature / 🗒 Docs / 🤷🏻‍♂️ Overige -->
+| Q | A
+| - | -
+| ⏱ Review tijd | <!-- 5 min -->
+| ⌨️ Type wijziging | <!-- 🛠 Bug fix / ➕ Nieuwe feature / 🗒 Docs / 🤷🏻‍♂️ Overige -->
 
 ### ✍️ Wijzigingen
 <!-- Omschrijving van welke componenten er zijn gewijzigd en waarom. -->
