@@ -2,7 +2,7 @@
 | - | -
 | ⏱ Review tijd | <!-- 5 min -->
 | ⌨️ Type wijziging | <!-- 🛠 Bug fix / ➕ Nieuwe feature / 🗒 Docs / 🤷🏻‍♂️ Overige -->
-| 🔗 Ticket | https://mv-jira-1.atlassian.net/browse/
+| 🔗 Ticket | <!-- DV-1337 -->
 
 ### ✍️ Wijzigingen
 <!-- Omschrijving van welke componenten er zijn gewijzigd en waarom. -->
