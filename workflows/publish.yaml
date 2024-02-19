@@ -1,0 +1,101 @@
+name: Deploy to Kubernetes
+
+on:
+  workflow_call:
+    inputs:
+      role-to-assume:
+        type: string
+        required: true
+        description: AWS Role to use for deployment
+      role-session-name:
+        type: string
+        default: EKS_Deployment_Via_FederatedOIDC
+      aws-region:
+        type: string
+        default: eu-central-1
+        description: AWS Region of the Kubernetes cluster
+      cluster-name:
+        type: string
+        required: true
+      config-files:
+        type: string
+        required: true
+        description: Location of the values file
+      chart-path:
+        type: string
+        description: .helm
+        default: Location of the main Chart.yaml file
+      namespace:
+        type: string
+        required: true
+      values:
+        type: string
+        description: List of extra values to pass to Helm
+      name:
+        type: string
+        required: true
+        description: Name of the Helm deployment
+      timeout:
+        type: string
+        default: 10m
+        description: Timeout before the deployment fails
+      version:
+        type: string
+        required: true
+        description: Application version to deployment
+    secrets:
+      SENTRY_ORG_AUTH_TOKEN:
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy to kubernetes
+    runs-on: ubuntu-latest
+    environment: test
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: colpal/actions-clean@v1
+      - uses: actions/checkout@v4
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ inputs.role-to-assume }}
+          role-session-name: ${{ inputs.role-session-name }}
+          aws-region: ${{ inputs.aws-region }}
+      - name: Create kubectl file
+        run: aws eks update-kubeconfig --region ${{ inputs.aws-region }} --name ${{ inputs.cluster-name }}
+      - name: Deploy with Helm
+        uses: bitovi/github-actions-deploy-eks-helm@v1.2.4
+        with:
+          aws-region: ${{ inputs.aws-region }}
+          cluster-name: ${{ inputs.cluster-name }}
+          config-files: ${{ inputs.config-files }}
+          chart-path: ${{ inputs.chart-path }}
+          namespace: ${{ inputs.namespace }}
+          values: ${{ inputs.values }}
+          name: ${{ inputs.name }}
+          timeout: ${{ inputs.timeout }}
+          update-deps: "true"
+          atomic: yes
+          helm-wait: true
+
+  create-sentry-release:
+    name: Create Sentry release
+    environment: test
+    needs:
+      - deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create Sentry Release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_ORG_AUTH_TOKEN }}
+          SENTRY_ORG: superbrave
+          SENTRY_PROJECT: pharmacy-service
+        with:
+          environment: test
+          version: 'pharmacy-service@${{ inputs.version }}'
