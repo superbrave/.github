@@ -3,6 +3,7 @@
 | ⏱ Review tijd | <!-- 5 min -->
 | ⌨️ Type wijziging | <!-- 🛠 Bug fix / ➕ Nieuwe feature / 🗒 Docs / 🤷🏻‍♂️ Overige -->
 | 🔗 Ticket | <!-- DV-1337 -->
+| 🎨 Design | <!-- Figma-link -->
 
 ### ✍️ Wijzigingen
 <!-- Omschrijving van welke componenten er zijn gewijzigd en waarom. -->
